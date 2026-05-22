@@ -1,0 +1,1008 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SKB — Premium Male Wears | Lagos</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Bebas+Neue&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold: #C9A84C;
+    --gold-light: #E8D49A;
+    --black: #0A0A0A;
+    --dark: #111111;
+    --dark2: #1A1A1A;
+    --dark3: #222222;
+    --cream: #F5F0E8;
+    --cream2: #EDE8DD;
+    --off-white: #FAF8F4;
+    --text-muted: #888880;
+    --border: rgba(201,168,76,0.2);
+  }
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--black);
+    color: var(--cream);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    overflow-x: hidden;
+    cursor: none;
+  }
+  /* Custom cursor */
+  .cursor {
+    position: fixed; width: 8px; height: 8px;
+    background: var(--gold); border-radius: 50%;
+    pointer-events: none; z-index: 9999;
+    transform: translate(-50%, -50%);
+    transition: transform 0.1s, width 0.3s, height 0.3s, opacity 0.3s;
+  }
+  .cursor-ring {
+    position: fixed; width: 32px; height: 32px;
+    border: 1px solid rgba(201,168,76,0.5); border-radius: 50%;
+    pointer-events: none; z-index: 9998;
+    transform: translate(-50%, -50%);
+    transition: transform 0.15s ease-out, width 0.3s, height 0.3s;
+  }
+  body:hover .cursor { opacity: 1; }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    padding: 28px 60px;
+    display: flex; align-items: center; justify-content: space-between;
+    transition: background 0.4s, padding 0.4s;
+  }
+  nav.scrolled {
+    background: rgba(10,10,10,0.95);
+    backdrop-filter: blur(12px);
+    padding: 18px 60px;
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-logo {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.2rem;
+    letter-spacing: 0.15em;
+    color: var(--gold);
+    text-decoration: none;
+  }
+  .nav-logo span { color: var(--cream); }
+  .nav-links { display: flex; gap: 40px; list-style: none; }
+  .nav-links a {
+    font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--cream); text-decoration: none; opacity: 0.75;
+    transition: opacity 0.3s, color 0.3s;
+  }
+  .nav-links a:hover { opacity: 1; color: var(--gold); }
+  .nav-cta {
+    font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--gold); border: 1px solid var(--gold);
+    padding: 10px 24px; text-decoration: none;
+    transition: background 0.3s, color 0.3s;
+  }
+  .nav-cta:hover { background: var(--gold); color: var(--black); }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: grid; grid-template-columns: 1fr 1fr;
+    overflow: hidden; position: relative;
+  }
+  .hero-left {
+    display: flex; flex-direction: column;
+    justify-content: flex-end; padding: 0 60px 80px;
+    background: var(--dark); position: relative; z-index: 2;
+  }
+  .hero-left::after {
+    content: ''; position: absolute; top: 0; right: -1px; bottom: 0; width: 1px;
+    background: linear-gradient(to bottom, transparent, var(--gold), transparent);
+  }
+  .hero-eyebrow {
+    font-size: 0.65rem; letter-spacing: 0.35em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 24px;
+    display: flex; align-items: center; gap: 16px;
+  }
+  .hero-eyebrow::before {
+    content: ''; width: 40px; height: 1px; background: var(--gold);
+  }
+  .hero-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(5rem, 10vw, 9rem);
+    line-height: 0.9; letter-spacing: 0.02em;
+    color: var(--cream);
+    margin-bottom: 32px;
+  }
+  .hero-title em {
+    font-style: italic;
+    font-family: 'Cormorant Garamond', serif;
+    color: var(--gold);
+  }
+  .hero-desc {
+    font-size: 0.82rem; line-height: 1.9; letter-spacing: 0.05em;
+    color: var(--text-muted); max-width: 360px; margin-bottom: 48px;
+  }
+  .hero-actions { display: flex; align-items: center; gap: 32px; }
+  .btn-primary {
+    font-size: 0.65rem; letter-spacing: 0.25em; text-transform: uppercase;
+    background: var(--gold); color: var(--black); font-weight: 500;
+    padding: 16px 40px; border: none; cursor: none;
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-decoration: none; display: inline-block;
+  }
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 40px rgba(201,168,76,0.3);
+  }
+  .btn-ghost {
+    font-size: 0.65rem; letter-spacing: 0.25em; text-transform: uppercase;
+    color: var(--cream); text-decoration: none; opacity: 0.6;
+    transition: opacity 0.3s;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .btn-ghost:hover { opacity: 1; }
+  .btn-ghost::after { content: '→'; font-size: 1rem; }
+
+  .hero-right {
+    background: var(--dark2); position: relative; overflow: hidden;
+  }
+  .hero-bg-pattern {
+    position: absolute; inset: 0;
+    background-image:
+      repeating-linear-gradient(
+        45deg,
+        transparent, transparent 60px,
+        rgba(201,168,76,0.03) 60px, rgba(201,168,76,0.03) 61px
+      );
+  }
+  .hero-badge {
+    position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);
+    width: 280px; height: 280px; border: 1px solid rgba(201,168,76,0.2);
+    border-radius: 50%; display: flex; flex-direction: column;
+    align-items: center; justify-content: center; text-align: center;
+    animation: rotateSlow 30s linear infinite;
+  }
+  .hero-badge-inner {
+    position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);
+    width: 200px; height: 200px; border: 1px solid rgba(201,168,76,0.15);
+    border-radius: 50%;
+  }
+  .hero-badge-text {
+    position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);
+    text-align: center;
+  }
+  .hero-badge-num {
+    font-family: 'Bebas Neue', sans-serif; font-size: 5rem;
+    color: var(--gold); line-height: 1; display: block;
+  }
+  .hero-badge-label {
+    font-size: 0.6rem; letter-spacing: 0.3em; text-transform: uppercase;
+    color: var(--text-muted); display: block; margin-top: 4px;
+  }
+  .hero-stars {
+    font-size: 0.85rem; color: var(--gold); letter-spacing: 4px;
+    display: block; margin-top: 8px;
+  }
+  @keyframes rotateSlow { from { transform: translate(-50%,-50%) rotate(0); } to { transform: translate(-50%,-50%) rotate(360deg); } }
+
+  .hero-ring-text {
+    position: absolute; width: 260px; height: 260px; top: 50%; left: 50%;
+    transform: translate(-50%,-50%);
+  }
+  .hero-ring-text textPath { fill: var(--gold); font-size: 9px; letter-spacing: 0.25em; }
+  .hero-scroll-indicator {
+    position: absolute; bottom: 40px; left: 50%;
+    transform: translateX(-50%);
+    display: flex; flex-direction: column; align-items: center; gap: 12px;
+  }
+  .scroll-line {
+    width: 1px; height: 60px;
+    background: linear-gradient(to bottom, var(--gold), transparent);
+    animation: scrollPulse 2s ease-in-out infinite;
+  }
+  @keyframes scrollPulse { 0%,100% { opacity: 0.3; transform: scaleY(1); } 50% { opacity: 1; transform: scaleY(1.2); } }
+  .scroll-label {
+    font-size: 0.55rem; letter-spacing: 0.3em; text-transform: uppercase;
+    color: var(--text-muted); writing-mode: vertical-rl;
+  }
+
+  /* MARQUEE */
+  .marquee-section {
+    padding: 20px 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+    overflow: hidden; background: var(--dark);
+  }
+  .marquee-track {
+    display: flex; white-space: nowrap;
+    animation: marquee 20s linear infinite;
+  }
+  .marquee-item {
+    font-family: 'Bebas Neue', sans-serif; font-size: 1.1rem;
+    letter-spacing: 0.2em; color: var(--text-muted);
+    padding: 0 40px; display: inline-flex; align-items: center; gap: 40px;
+  }
+  .marquee-dot {
+    width: 5px; height: 5px; border-radius: 50%; background: var(--gold);
+    flex-shrink: 0; display: inline-block;
+  }
+  @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+  /* ABOUT */
+  .about {
+    padding: 120px 60px;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 100px;
+    background: var(--dark);
+  }
+  .section-label {
+    font-size: 0.6rem; letter-spacing: 0.35em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 20px;
+    display: flex; align-items: center; gap: 12px;
+  }
+  .section-label::before { content: ''; width: 30px; height: 1px; background: var(--gold); }
+  .about-heading {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    font-weight: 400; line-height: 1.1;
+    color: var(--cream); margin-bottom: 32px;
+  }
+  .about-heading em { color: var(--gold); font-style: italic; }
+  .about-text {
+    font-size: 0.82rem; line-height: 2; color: var(--text-muted);
+    margin-bottom: 20px;
+  }
+  .about-stats {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 24px; margin-top: 48px;
+  }
+  .stat-box {
+    border: 1px solid var(--border); padding: 24px;
+    transition: border-color 0.3s;
+  }
+  .stat-box:hover { border-color: var(--gold); }
+  .stat-num {
+    font-family: 'Bebas Neue', sans-serif; font-size: 2.8rem;
+    color: var(--gold); letter-spacing: 0.05em;
+  }
+  .stat-label {
+    font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--text-muted); margin-top: 4px;
+  }
+  .about-right { display: flex; flex-direction: column; justify-content: center; }
+  .feature-list { list-style: none; margin-top: 32px; }
+  .feature-list li {
+    padding: 20px 0; border-bottom: 1px solid var(--border);
+    display: flex; align-items: flex-start; gap: 20px;
+    font-size: 0.82rem; line-height: 1.7; color: var(--text-muted);
+    transition: color 0.3s;
+  }
+  .feature-list li:hover { color: var(--cream); }
+  .feature-list li:first-child { border-top: 1px solid var(--border); }
+  .feature-icon {
+    font-family: 'Bebas Neue', sans-serif; font-size: 1.5rem;
+    color: var(--gold); min-width: 32px; line-height: 1;
+  }
+  .feature-title {
+    font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--cream); display: block; margin-bottom: 4px;
+  }
+
+  /* COLLECTION */
+  .collection { padding: 100px 60px; background: var(--black); }
+  .section-header {
+    display: flex; justify-content: space-between; align-items: flex-end;
+    margin-bottom: 60px;
+  }
+  .section-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(3rem, 6vw, 5.5rem);
+    color: var(--cream); letter-spacing: 0.03em; line-height: 0.9;
+  }
+  .section-title em {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic; color: var(--gold);
+  }
+  .section-link {
+    font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--gold); text-decoration: none;
+    display: flex; align-items: center; gap: 8px;
+    transition: gap 0.3s;
+  }
+  .section-link:hover { gap: 16px; }
+  .product-grid {
+    display: grid; grid-template-columns: 2fr 1fr 1fr; grid-template-rows: auto auto;
+    gap: 2px;
+  }
+  .product-card {
+    position: relative; overflow: hidden; background: var(--dark2);
+    cursor: none;
+  }
+  .product-card:first-child { grid-row: span 2; }
+  .product-img {
+    width: 100%; aspect-ratio: 3/4; object-fit: cover;
+    transition: transform 0.7s ease, filter 0.5s;
+    filter: grayscale(20%);
+    background: var(--dark3);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .product-card:first-child .product-img { aspect-ratio: 3/5; }
+  .product-img-placeholder {
+    width: 100%; height: 100%; display: flex; flex-direction: column;
+    align-items: center; justify-content: center; gap: 12px;
+    background: var(--dark3);
+  }
+  .product-img-icon {
+    font-size: 3rem; color: var(--border);
+  }
+  .product-card:hover .product-img { transform: scale(1.06); filter: grayscale(0%); }
+  .product-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(to top, rgba(10,10,10,0.9) 0%, transparent 50%);
+    display: flex; flex-direction: column; justify-content: flex-end;
+    padding: 24px;
+  }
+  .product-tag {
+    font-size: 0.55rem; letter-spacing: 0.3em; text-transform: uppercase;
+    color: var(--gold); background: rgba(201,168,76,0.15);
+    border: 1px solid rgba(201,168,76,0.3); padding: 4px 10px;
+    display: inline-block; margin-bottom: 8px; width: fit-content;
+  }
+  .product-name {
+    font-family: 'Cormorant Garamond', serif; font-size: 1.5rem;
+    color: var(--cream); font-weight: 400;
+  }
+  .product-card:first-child .product-name { font-size: 2.2rem; }
+  .product-price {
+    font-size: 0.75rem; letter-spacing: 0.1em; color: var(--text-muted);
+    margin-top: 4px;
+  }
+  .product-add {
+    position: absolute; top: 16px; right: 16px;
+    width: 40px; height: 40px; border: 1px solid var(--gold);
+    background: transparent; color: var(--gold); font-size: 1.2rem;
+    display: flex; align-items: center; justify-content: center;
+    cursor: none; opacity: 0; transform: translateY(-8px);
+    transition: opacity 0.3s, transform 0.3s, background 0.3s;
+  }
+  .product-card:hover .product-add { opacity: 1; transform: translateY(0); }
+  .product-add:hover { background: var(--gold); color: var(--black); }
+
+  /* WHY SKB */
+  .why {
+    padding: 100px 60px;
+    background: var(--dark);
+    position: relative; overflow: hidden;
+  }
+  .why::before {
+    content: 'SKB'; position: absolute; right: -30px; top: 50%;
+    transform: translateY(-50%);
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22rem; color: rgba(255,255,255,0.015);
+    line-height: 1; pointer-events: none; letter-spacing: 0.05em;
+  }
+  .why-grid {
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    gap: 1px; background: var(--border);
+    border: 1px solid var(--border);
+    margin-top: 60px;
+  }
+  .why-item {
+    background: var(--dark); padding: 40px 32px;
+    transition: background 0.3s;
+  }
+  .why-item:hover { background: var(--dark2); }
+  .why-num {
+    font-family: 'Bebas Neue', sans-serif; font-size: 3rem;
+    color: rgba(201,168,76,0.3); margin-bottom: 20px;
+  }
+  .why-title {
+    font-family: 'Cormorant Garamond', serif; font-size: 1.4rem;
+    color: var(--cream); margin-bottom: 12px; font-weight: 400;
+  }
+  .why-desc {
+    font-size: 0.78rem; line-height: 1.9; color: var(--text-muted);
+  }
+
+  /* TESTIMONIALS */
+  .testimonials { padding: 100px 60px; background: var(--black); }
+  .review-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 24px; margin-top: 60px;
+  }
+  .review-card {
+    border: 1px solid var(--border); padding: 36px;
+    transition: border-color 0.3s, transform 0.3s;
+  }
+  .review-card:hover { border-color: var(--gold); transform: translateY(-4px); }
+  .review-stars { color: var(--gold); font-size: 0.75rem; letter-spacing: 3px; margin-bottom: 20px; }
+  .review-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem; line-height: 1.7; color: var(--cream);
+    font-style: italic; margin-bottom: 24px;
+  }
+  .review-author {
+    font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--text-muted);
+    display: flex; align-items: center; gap: 12px;
+  }
+  .review-author::before {
+    content: ''; width: 24px; height: 1px; background: var(--gold);
+  }
+  .review-badge {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: 0.6rem; letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--gold); background: rgba(201,168,76,0.1);
+    border: 1px solid rgba(201,168,76,0.2); padding: 3px 10px; margin-bottom: 16px;
+  }
+
+  /* LOCATION */
+  .location { padding: 100px 60px; background: var(--dark); }
+  .location-inner {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 80px;
+    align-items: center;
+  }
+  .location-details { }
+  .location-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 4vw, 3.5rem); font-weight: 400;
+    color: var(--cream); line-height: 1.2; margin-bottom: 32px;
+  }
+  .location-title em { color: var(--gold); font-style: italic; }
+  .info-row {
+    display: flex; align-items: flex-start; gap: 20px;
+    padding: 20px 0; border-bottom: 1px solid var(--border);
+  }
+  .info-row:first-of-type { border-top: 1px solid var(--border); }
+  .info-icon {
+    width: 36px; height: 36px; border: 1px solid var(--border);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.8rem; color: var(--gold); flex-shrink: 0;
+    margin-top: 2px;
+  }
+  .info-label {
+    font-size: 0.6rem; letter-spacing: 0.25em; text-transform: uppercase;
+    color: var(--text-muted); display: block; margin-bottom: 4px;
+  }
+  .info-value {
+    font-size: 0.85rem; color: var(--cream); line-height: 1.6;
+  }
+  .info-value a { color: var(--gold); text-decoration: none; }
+  .info-value a:hover { text-decoration: underline; }
+  .location-map {
+    background: var(--dark2); border: 1px solid var(--border);
+    aspect-ratio: 1; display: flex; flex-direction: column;
+    align-items: center; justify-content: center; gap: 16px;
+    position: relative; overflow: hidden;
+  }
+  .map-pin {
+    width: 48px; height: 48px; border: 2px solid var(--gold);
+    border-radius: 50% 50% 50% 0; transform: rotate(-45deg);
+    display: flex; align-items: center; justify-content: center;
+    animation: pinBounce 2s ease-in-out infinite;
+  }
+  .map-pin-inner {
+    width: 16px; height: 16px; background: var(--gold); border-radius: 50%;
+    transform: rotate(45deg);
+  }
+  @keyframes pinBounce { 0%,100% { transform: rotate(-45deg) translateY(0); } 50% { transform: rotate(-45deg) translateY(-8px); } }
+  .map-grid {
+    position: absolute; inset: 0; opacity: 0.15;
+    background-image:
+      linear-gradient(var(--gold) 1px, transparent 1px),
+      linear-gradient(90deg, var(--gold) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+  .map-label {
+    font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--cream); text-align: center; line-height: 1.6;
+    position: relative; z-index: 2;
+  }
+  .map-label strong { display: block; color: var(--gold); margin-bottom: 4px; }
+  .social-links { display: flex; gap: 16px; margin-top: 32px; }
+  .social-link {
+    display: flex; align-items: center; gap: 8px;
+    font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--text-muted); text-decoration: none;
+    border: 1px solid var(--border); padding: 10px 20px;
+    transition: border-color 0.3s, color 0.3s;
+  }
+  .social-link:hover { border-color: var(--gold); color: var(--gold); }
+
+  /* CTA */
+  .cta-section {
+    padding: 120px 60px; background: var(--black);
+    display: flex; flex-direction: column; align-items: center;
+    text-align: center; position: relative; overflow: hidden;
+  }
+  .cta-bg {
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse 60% 60% at 50% 50%, rgba(201,168,76,0.06) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .cta-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(3rem, 8vw, 7rem);
+    color: var(--cream); line-height: 0.9;
+    margin-bottom: 24px;
+  }
+  .cta-title em {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic; color: var(--gold);
+  }
+  .cta-subtitle {
+    font-size: 0.82rem; color: var(--text-muted);
+    letter-spacing: 0.08em; max-width: 400px; line-height: 2;
+    margin-bottom: 48px;
+  }
+  .cta-actions { display: flex; gap: 20px; }
+  .btn-outline {
+    font-size: 0.65rem; letter-spacing: 0.25em; text-transform: uppercase;
+    color: var(--cream); border: 1px solid rgba(255,255,255,0.2);
+    padding: 16px 40px; text-decoration: none;
+    transition: border-color 0.3s, color 0.3s;
+    cursor: none;
+  }
+  .btn-outline:hover { border-color: var(--cream); }
+
+  /* FOOTER */
+  footer {
+    padding: 60px; background: var(--dark);
+    border-top: 1px solid var(--border);
+    display: grid; grid-template-columns: 1fr 1fr; align-items: center;
+  }
+  .footer-logo {
+    font-family: 'Bebas Neue', sans-serif; font-size: 3rem;
+    color: var(--gold); letter-spacing: 0.1em;
+  }
+  .footer-logo span { color: var(--cream); }
+  .footer-tagline {
+    font-size: 0.7rem; letter-spacing: 0.15em;
+    color: var(--text-muted); margin-top: 8px;
+  }
+  .footer-right { text-align: right; }
+  .footer-links {
+    display: flex; gap: 32px; justify-content: flex-end;
+    list-style: none; margin-bottom: 24px;
+  }
+  .footer-links a {
+    font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--text-muted); text-decoration: none;
+    transition: color 0.3s;
+  }
+  .footer-links a:hover { color: var(--gold); }
+  .footer-copy {
+    font-size: 0.65rem; letter-spacing: 0.1em; color: var(--text-muted);
+  }
+  .footer-copy span { color: var(--gold); }
+
+  /* REVEAL ANIMATIONS */
+  .reveal { opacity: 0; transform: translateY(32px); transition: opacity 0.8s ease, transform 0.8s ease; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+
+  /* MOBILE */
+  @media (max-width: 900px) {
+    nav { padding: 20px 24px; }
+    nav.scrolled { padding: 14px 24px; }
+    .nav-links { display: none; }
+    .hero { grid-template-columns: 1fr; min-height: auto; }
+    .hero-left { padding: 120px 24px 60px; }
+    .hero-right { display: none; }
+    .about { grid-template-columns: 1fr; gap: 48px; padding: 60px 24px; }
+    .collection { padding: 60px 24px; }
+    .product-grid { grid-template-columns: 1fr; }
+    .product-card:first-child { grid-row: auto; }
+    .why { padding: 60px 24px; }
+    .why-grid { grid-template-columns: 1fr 1fr; }
+    .testimonials { padding: 60px 24px; }
+    .review-grid { grid-template-columns: 1fr; }
+    .location { padding: 60px 24px; }
+    .location-inner { grid-template-columns: 1fr; gap: 40px; }
+    .cta-section { padding: 80px 24px; }
+    footer { grid-template-columns: 1fr; gap: 32px; padding: 40px 24px; }
+    .footer-right { text-align: left; }
+    .footer-links { justify-content: flex-start; }
+    body { cursor: auto; }
+    .cursor, .cursor-ring { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- NAV -->
+<nav id="navbar">
+  <a href="#" class="nav-logo">SKB<span>.</span></a>
+  <ul class="nav-links">
+    <li><a href="#collection">Collection</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#testimonials">Reviews</a></li>
+    <li><a href="#location">Visit</a></li>
+  </ul>
+  <a href="tel:09019032978" class="nav-cta">Call Us</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-eyebrow">Premium Male Wears · Lagos Island</div>
+    <h1 class="hero-title">
+      Dress<br>
+      <em>Sharp.</em><br>
+      Stay<br>
+      Classic.
+    </h1>
+    <p class="hero-desc">
+      The finest curated menswear on Lagos Island. Wholesale and retail fashion at prices that honour your hustle.
+    </p>
+    <div class="hero-actions">
+      <a href="#collection" class="btn-primary">Shop Collection</a>
+      <a href="#location" class="btn-ghost">Visit Store</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-bg-pattern"></div>
+    <div class="hero-badge">
+      <svg class="hero-ring-text" viewBox="0 0 260 260">
+        <defs>
+          <path id="circle" d="M 130 130 m -100 0 a 100 100 0 1 1 200 0 a 100 100 0 1 1 -200 0"/>
+        </defs>
+        <text>
+          <textPath href="#circle">PREMIUM QUALITY MALE WEARS · LAGOS ISLAND · SINCE 2018 · </textPath>
+        </text>
+      </svg>
+    </div>
+    <div class="hero-badge-inner" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:200px;height:200px;border:1px solid rgba(201,168,76,0.15);border-radius:50%;"></div>
+    <div class="hero-badge-text" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center;">
+      <span class="hero-badge-num">4.8</span>
+      <span class="hero-stars">★ ★ ★ ★ ★</span>
+      <span class="hero-badge-label">34 Google Reviews</span>
+    </div>
+    <div class="hero-scroll-indicator">
+      <div class="scroll-line"></div>
+      <span class="scroll-label">Scroll</span>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-section">
+  <div class="marquee-track">
+    <span class="marquee-item">Premium Wears <span class="marquee-dot"></span></span>
+    <span class="marquee-item">Wholesale & Retail <span class="marquee-dot"></span></span>
+    <span class="marquee-item">Lagos Island <span class="marquee-dot"></span></span>
+    <span class="marquee-item">Curated Menswear <span class="marquee-dot"></span></span>
+    <span class="marquee-item">4.8 Stars Rated <span class="marquee-dot"></span></span>
+    <span class="marquee-item">Exclusive Deals <span class="marquee-dot"></span></span>
+    <span class="marquee-item">New Arrivals <span class="marquee-dot"></span></span>
+    <span class="marquee-item">Premium Wears <span class="marquee-dot"></span></span>
+    <span class="marquee-item">Wholesale & Retail <span class="marquee-dot"></span></span>
+    <span class="marquee-item">Lagos Island <span class="marquee-dot"></span></span>
+    <span class="marquee-item">Curated Menswear <span class="marquee-dot"></span></span>
+    <span class="marquee-item">4.8 Stars Rated <span class="marquee-dot"></span></span>
+    <span class="marquee-item">Exclusive Deals <span class="marquee-dot"></span></span>
+    <span class="marquee-item">New Arrivals <span class="marquee-dot"></span></span>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="reveal">
+    <div class="section-label">Our Story</div>
+    <h2 class="about-heading">Where <em>Style</em><br>Meets Substance</h2>
+    <p class="about-text">SKB Clothing was born on Lagos Island with a single vision: to give Nigerian men access to premium quality fashion at prices that make sense. Every piece in our collection is handpicked for quality, cut, and character.</p>
+    <p class="about-text">From casual sweatshirts to sharp formal pieces, we carry the full spectrum of the modern Nigerian man's wardrobe — because you deserve to look your best every single day.</p>
+    <div class="about-stats">
+      <div class="stat-box">
+        <div class="stat-num">4.8</div>
+        <div class="stat-label">Google Rating</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-num">34+</div>
+        <div class="stat-label">Happy Reviews</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-num">1.5K</div>
+        <div class="stat-label">Facebook Fans</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-num">100%</div>
+        <div class="stat-label">Quality Promise</div>
+      </div>
+    </div>
+  </div>
+  <div class="about-right reveal" style="transition-delay:0.2s">
+    <div class="section-label">Why Choose Us</div>
+    <ul class="feature-list">
+      <li>
+        <div class="feature-icon">①</div>
+        <div>
+          <span class="feature-title">Premium Curation</span>
+          Every garment is personally selected for quality, fit, and durability. We don't just sell clothes — we curate wardrobes.
+        </div>
+      </li>
+      <li>
+        <div class="feature-icon">②</div>
+        <div>
+          <span class="feature-title">Wholesale Pricing</span>
+          Whether you buy one piece or one hundred, SKB offers the best prices on Lagos Island. Style should be accessible.
+        </div>
+      </li>
+      <li>
+        <div class="feature-icon">③</div>
+        <div>
+          <span class="feature-title">Real Reviews</span>
+          Our 4.8-star Google rating isn't marketing — it's earned, one satisfied customer at a time.
+        </div>
+      </li>
+      <li>
+        <div class="feature-icon">④</div>
+        <div>
+          <span class="feature-title">Easy Access</span>
+          Shop in-store at A4C Executive Mall, Mandilas, or reach us on WhatsApp, Instagram, Facebook and Telegram.
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- COLLECTION -->
+<section class="collection" id="collection">
+  <div class="section-header reveal">
+    <div>
+      <div class="section-label">The Collection</div>
+      <h2 class="section-title">New<br><em>Arrivals</em></h2>
+    </div>
+    <a href="https://www.instagram.com/skboflagos/" target="_blank" class="section-link">View All →</a>
+  </div>
+  <div class="product-grid reveal">
+    <!-- Featured -->
+    <div class="product-card">
+      <div class="product-img" style="aspect-ratio:3/5;background:linear-gradient(160deg,#1a1a1a,#2a2510);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;">
+        <img src="imgs/2022-03-13.webp" alt="Luxury Icon"
+            style="width:100%; height:100%; object-fit:cover; object-position:center; display:block;"
+            loading="lazy" decoding="async" />
+        <span style="font-size:0.6rem;letter-spacing:0.3em;color:rgba(201,168,76,0.4);text-transform:uppercase;">Premium Piece</span>
+      </div>
+      <div class="product-overlay">
+        <span class="product-tag">Featured</span>
+        <div class="product-name">The Signature Sweatshirt</div>
+        <div class="product-price">Wholesale & Retail Available</div>
+      </div>
+      <button class="product-add">+</button>
+    </div>
+    <!-- Card 2 -->
+    <div class="product-card">
+      <div class="product-img" style="background:linear-gradient(160deg,#1c1a12,#201d0e);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;">
+        <img src="imgs/2025-02-25.webp" alt="Luxury Icon"
+            style="width:100%; height:100%; object-fit:cover; object-position:center; display:block;"
+            loading="lazy" decoding="async" />
+        <span style="font-size:0.55rem;letter-spacing:0.25em;color:rgba(201,168,76,0.3);text-transform:uppercase;">New In</span>
+      </div>
+      <div class="product-overlay">
+        <span class="product-tag">New In</span>
+        <div class="product-name">Executive Polo</div>
+        <div class="product-price">Premium Quality</div>
+      </div>
+      <button class="product-add">+</button>
+    </div>
+    <!-- Card 3 -->
+    <div class="product-card">
+      <div class="product-img" style="background:linear-gradient(160deg,#12171c,#0e1520);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;">
+        <img src="imgs/skbimg1.webp" alt="Luxury Icon"
+            style="width:100%; height:100%; object-fit:cover; object-position:center; display:block;"
+            loading="lazy" decoding="async" />
+        <span style="font-size:0.55rem;letter-spacing:0.25em;color:rgba(201,168,76,0.3);text-transform:uppercase;">Best Seller</span>
+      </div>
+      <div class="product-overlay">
+        <span class="product-tag">Best Seller</span>
+        <div class="product-name">Lagos Casual Tee</div>
+        <div class="product-price">Available In-Store</div>
+      </div>
+      <button class="product-add">+</button>
+    </div>
+    <!-- Card 4 -->
+    <div class="product-card">
+      <div class="product-img" style="background:linear-gradient(160deg,#1a150a,#2a200e);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;">
+        <img src="imgs/unnamed.webp" alt="Luxury Icon"
+            style="width:100%; height:100%; object-fit:cover; object-position:center; display:block;"
+            loading="lazy" decoding="async" />
+        <span style="font-size:0.55rem;letter-spacing:0.25em;color:rgba(201,168,76,0.3);text-transform:uppercase;">Trending</span>
+      </div>
+      <div class="product-overlay">
+        <span class="product-tag">Trending</span>
+        <div class="product-name">Street Hoodie</div>
+        <div class="product-price">DM for Pricing</div>
+      </div>
+      <button class="product-add">+</button>
+    </div>
+  </div>
+</section>
+
+<!-- WHY SKB -->
+<section class="why">
+  <div class="section-label reveal">The SKB Difference</div>
+  <h2 class="section-title reveal" style="max-width:600px;margin-top:16px;">Built on <em>Trust,</em><br>Defined by <em>Style</em></h2>
+  <div class="why-grid reveal">
+    <div class="why-item">
+      <div class="why-num">01</div>
+      <div class="why-title">Handpicked Selection</div>
+      <p class="why-desc">Every single item is curated by our team with quality and style in mind. No fast fashion, no compromise.</p>
+    </div>
+    <div class="why-item">
+      <div class="why-num">02</div>
+      <div class="why-title">Wholesale Access</div>
+      <p class="why-desc">Bulk orders? We handle them. Retail buyers? We love them. SKB serves Lagos Island's full fashion spectrum.</p>
+    </div>
+    <div class="why-item">
+      <div class="why-num">03</div>
+      <div class="why-title">DM & Delivery</div>
+      <p class="why-desc">Can't make it to the mall? Reach us on WhatsApp or Instagram and we'll sort your order — fast and reliable.</p>
+    </div>
+    <div class="why-item">
+      <div class="why-num">04</div>
+      <div class="why-title">Verified by Customers</div>
+      <p class="why-desc">34 reviews, 4.8 stars on Google. Our reputation is built on real customer satisfaction, nothing else.</p>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials" id="testimonials">
+  <div class="section-header reveal">
+    <div>
+      <div class="section-label">Customer Reviews</div>
+      <h2 class="section-title">What Lagos<br><em>Says</em></h2>
+    </div>
+    <div style="text-align:right;">
+      <div style="font-family:'Bebas Neue',sans-serif;font-size:3rem;color:var(--gold);">4.8</div>
+      <div style="font-size:0.75rem;letter-spacing:3px;color:var(--gold);">★ ★ ★ ★ ★</div>
+      <div style="font-size:0.65rem;letter-spacing:0.15em;color:var(--text-muted);margin-top:4px;">34 Google Reviews</div>
+    </div>
+  </div>
+  <div class="review-grid reveal">
+    <div class="review-card">
+      <span class="review-badge">✓ Verified Google Review</span>
+      <div class="review-stars">★ ★ ★ ★ ★</div>
+      <p class="review-text">"Nice clothings with nice deals. The quality is top-notch and the pricing is very fair. Will definitely be coming back."</p>
+      <div class="review-author">Satisfied Customer</div>
+    </div>
+    <div class="review-card">
+      <span class="review-badge">✓ Verified Review</span>
+      <div class="review-stars">★ ★ ★ ★ ★</div>
+      <p class="review-text">"Best menswear shop on Lagos Island. The selection is fresh, the service is friendly, and the prices can't be beaten anywhere."</p>
+      <div class="review-author">Lagos Shopper</div>
+    </div>
+    <div class="review-card">
+      <span class="review-badge">✓ Verified Review</span>
+      <div class="review-stars">★ ★ ★ ★ ★</div>
+      <p class="review-text">"SKB never disappoints. Every visit I find something I love. The wholesale deal is a steal for resellers — highly recommended."</p>
+      <div class="review-author">Regular Customer</div>
+    </div>
+  </div>
+</section>
+
+<!-- LOCATION -->
+<section class="location" id="location">
+  <div class="location-inner">
+    <div class="reveal">
+      <div class="section-label">Find Us</div>
+      <h2 class="location-title">Come Experience<br><em>SKB</em> In Person</h2>
+      <div class="info-row">
+        <div class="info-icon">📍</div>
+        <div>
+          <span class="info-label">Address</span>
+          <span class="info-value">Shop 2 (Ground Floor, Front), Behind Andora Plaza,<br>A4C Executive Mall, 54/55 Taiwo St,<br>Mandillas, Lagos Island 100001</span>
+        </div>
+      </div>
+      <div class="info-row">
+        <div class="info-icon">📞</div>
+        <div>
+          <span class="info-label">Phone / WhatsApp</span>
+          <span class="info-value">
+            <a href="tel:09019032978">0901 903 2978</a> &nbsp;·&nbsp;
+            <a href="tel:08038092145">0803 809 2145</a>
+          </span>
+        </div>
+      </div>
+      <div class="info-row">
+        <div class="info-icon">🕐</div>
+        <div>
+          <span class="info-label">Opening Hours</span>
+          <span class="info-value">Monday – Saturday: 8:00 AM – 7:00 PM<br>Sunday: 10:00 AM – 5:00 PM</span>
+        </div>
+      </div>
+      <div class="info-row">
+        <div class="info-icon">🌐</div>
+        <div>
+          <span class="info-label">Website</span>
+          <span class="info-value"><a href="https://skb.com.ng" target="_blank">skb.com.ng</a></span>
+        </div>
+      </div>
+      <div class="social-links">
+        <a href="https://www.instagram.com/skboflagos/" target="_blank" class="social-link">
+          <span>Instagram</span>
+        </a>
+        <a href="https://www.facebook.com/skb.ngn/" target="_blank" class="social-link">
+          <span>Facebook</span>
+        </a>
+        <a href="https://t.me/skbclothing" target="_blank" class="social-link">
+          <span>Telegram</span>
+        </a>
+      </div>
+    </div>
+    <div class="location-map reveal" style="transition-delay:0.2s">
+      <div class="map-grid"></div>
+      <div class="map-pin"><div class="map-pin-inner"></div></div>
+      <div class="map-label">
+        <strong>SKB Clothing</strong>
+        A4C Executive Mall<br>Mandilas, Lagos Island
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="cta-bg"></div>
+  <div class="section-label reveal" style="margin-bottom:24px;">Don't Wait</div>
+  <h2 class="cta-title reveal">
+    Your Next<br>
+    <em>Fit</em><br>
+    Awaits.
+  </h2>
+  <p class="cta-subtitle reveal">Walk into the A4C Executive Mall or send us a DM. We've got something for every Nigerian man.</p>
+  <div class="cta-actions reveal">
+    <a href="https://wa.me/2349019032978" target="_blank" class="btn-primary">WhatsApp Us</a>
+    <a href="https://www.instagram.com/skboflagos/" target="_blank" class="btn-outline">@skboflagos</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div>
+    <div class="footer-logo">SKB<span>.</span></div>
+    <div class="footer-tagline">Premium Male Wears · Lagos Island · Since 2018</div>
+  </div>
+  <div class="footer-right">
+    <ul class="footer-links">
+      <li><a href="#collection">Collection</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#location">Visit</a></li>
+      <li><a href="https://skb.com.ng" target="_blank">Website</a></li>
+    </ul>
+    <div class="footer-copy">© 2025 <span>SKB Clothing</span>. All Rights Reserved.</div>
+  </div>
+</footer>
+
+<script>
+  // Custom cursor
+  const cursor = document.getElementById('cursor');
+  const ring = document.getElementById('cursorRing');
+  let mx = 0, my = 0, rx = 0, ry = 0;
+  document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; });
+  function animateCursor() {
+    cursor.style.left = mx + 'px'; cursor.style.top = my + 'px';
+    rx += (mx - rx) * 0.12; ry += (my - ry) * 0.12;
+    ring.style.left = rx + 'px'; ring.style.top = ry + 'px';
+    requestAnimationFrame(animateCursor);
+  }
+  animateCursor();
+  document.querySelectorAll('a,button').forEach(el => {
+    el.addEventListener('mouseenter', () => { cursor.style.width = '16px'; cursor.style.height = '16px'; ring.style.width = '48px'; ring.style.height = '48px'; });
+    el.addEventListener('mouseleave', () => { cursor.style.width = '8px'; cursor.style.height = '8px'; ring.style.width = '32px'; ring.style.height = '32px'; });
+  });
+
+  // Navbar scroll
+  window.addEventListener('scroll', () => {
+    document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 60);
+  });
+
+  // Reveal on scroll
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
+  }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
